@@ -1,4 +1,4 @@
-package main
+package routes
 
 import (
 	"github.com/gin-gonic/gin"
@@ -13,6 +13,10 @@ func CategoryRoutes(router *gin.Engine) {
 
 	categoryRoutes.POST("/", func(ctx *gin.Context) {
 		controllers.CreateCategoryController(ctx, inMemoryCategoryRepository)
+	})
+
+	categoryRoutes.GET("/", func(ctx *gin.Context) {
+		controllers.ListCategoryController(ctx, inMemoryCategoryRepository)
 	})
 
 }

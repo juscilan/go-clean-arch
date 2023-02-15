@@ -1,11 +1,14 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/gin-gonic/gin"
+	"github.com/juscilan/go-clean-arch/cmd/api/routes"
+)
 
 func main() {
 	router := gin.Default()
 
-	CategoryRoutes(router)
+	routes.CategoryRoutes(router)
 
 	router.Run(":8080")
 }

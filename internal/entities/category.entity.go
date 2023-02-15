@@ -14,7 +14,7 @@ type Category struct {
 
 func (c *Category) isValid() error {
 	if len(c.Name) < 5 {
-		return fmt.Errorf("Name must be greater than 5. Got %d", len(c.Name))
+		return fmt.Errorf("name must be greater than 5. got %d", len(c.Name))
 	}
 	return nil
 }
@@ -26,7 +26,6 @@ func NewCategory(name string) (*Category, error) {
 		UpdatedAt: time.Now(),
 	}
 
-	//createonal caregory business rules
 	err := category.isValid()
 	if err != nil {
 		return nil, err

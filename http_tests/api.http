@@ -6,3 +6,9 @@ Content-Type: application/json
 }
 
 ###
+
+GET http://localhost:8080/categories
+Content-Type: application/json
+
+
+###

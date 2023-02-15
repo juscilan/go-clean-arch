@@ -16,3 +16,7 @@ func (r *categoryInMemoryRepository) Save(category *entities.Category) error {
 	r.db = append(r.db, category)
 	return nil
 }
+
+func (r *categoryInMemoryRepository) List() ([]*entities.Category, error) {
+	return r.db, nil
+}
