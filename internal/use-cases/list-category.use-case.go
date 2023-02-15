@@ -2,14 +2,14 @@ package usecases
 
 import (
 	"github.com/juscilan/go-clean-arch/internal/entities"
-	"github.com/juscilan/go-clean-arch/internal/repositories"
+	"github.com/juscilan/go-clean-arch/internal/interfaces"
 )
 
 type listCategoryUseCase struct {
-	repository repositories.CategoryRepositoryInterface
+	repository interfaces.CategoryRepositoryInterface
 }
 
-func NewListCategoryUseCase(repository repositories.CategoryRepositoryInterface) *listCategoryUseCase {
+func NewListCategoryUseCase(repository interfaces.CategoryRepositoryInterface) *listCategoryUseCase {
 	return &listCategoryUseCase{repository}
 }
 

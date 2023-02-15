@@ -4,11 +4,11 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/juscilan/go-clean-arch/internal/repositories"
+	"github.com/juscilan/go-clean-arch/internal/interfaces"
 	usecases "github.com/juscilan/go-clean-arch/internal/use-cases"
 )
 
-func ListCategoryController(ctx *gin.Context, repository repositories.CategoryRepositoryInterface) {
+func ListCategoryController(ctx *gin.Context, repository interfaces.CategoryRepositoryInterface) {
 
 	useCase := usecases.NewListCategoryUseCase(repository)
 

@@ -1,4 +1,4 @@
-package repositories
+package interfaces
 
 import "github.com/juscilan/go-clean-arch/internal/entities"
 

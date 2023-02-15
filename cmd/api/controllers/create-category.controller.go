@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/juscilan/go-clean-arch/internal/repositories"
+	"github.com/juscilan/go-clean-arch/internal/interfaces"
 	usecases "github.com/juscilan/go-clean-arch/internal/use-cases"
 )
 
@@ -12,7 +12,7 @@ type createCategotyInputDTO struct {
 	Name string `json:"name" binding:"required"`
 }
 
-func CreateCategoryController(ctx *gin.Context, repository repositories.CategoryRepositoryInterface) {
+func CreateCategoryController(ctx *gin.Context, repository interfaces.CategoryRepositoryInterface) {
 	var body createCategotyInputDTO
 
 	err := ctx.ShouldBindJSON(&body)
