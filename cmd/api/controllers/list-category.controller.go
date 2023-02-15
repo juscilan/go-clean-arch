@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/juscilan/go-clean-arch/internal/interfaces"
+	"github.com/juscilan/go-clean-arch/internal/repositories/interfaces"
 	usecases "github.com/juscilan/go-clean-arch/internal/use-cases"
 )
 

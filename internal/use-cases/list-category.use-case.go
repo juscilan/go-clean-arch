@@ -2,7 +2,7 @@ package usecases
 
 import (
 	"github.com/juscilan/go-clean-arch/internal/entities"
-	"github.com/juscilan/go-clean-arch/internal/interfaces"
+	"github.com/juscilan/go-clean-arch/internal/repositories/interfaces"
 )
 
 type listCategoryUseCase struct {
