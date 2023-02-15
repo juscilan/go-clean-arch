@@ -1,12 +1,16 @@
 package usecases
 
-import "github.com/juscilan/go-clean-arch/internal/entities"
+import (
+	"github.com/juscilan/go-clean-arch/internal/entities"
+	"github.com/juscilan/go-clean-arch/internal/repositories"
+)
 
 type createCategoryUseCase struct {
+	repository repositories.CategoryRepositoryInterface
 }
 
-func NewCreateCategoryUseCase() *createCategoryUseCase {
-	return &createCategoryUseCase{}
+func NewCreateCategoryUseCase(repository repositories.CategoryRepositoryInterface) *createCategoryUseCase {
+	return &createCategoryUseCase{repository}
 }
 
 func (u *createCategoryUseCase) Execute(name string) error {
@@ -15,7 +19,10 @@ func (u *createCategoryUseCase) Execute(name string) error {
 		return err
 	}
 
-	println(category)
+	err = u.repository.Save(category)
+	if err != nil {
+		return err
+	}
 
 	return nil
 }

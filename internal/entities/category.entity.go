@@ -5,22 +5,22 @@ import (
 	"time"
 )
 
-type category struct {
+type Category struct {
 	ID        uint      `json:"id"`
 	Name      string    `json:"name"`
 	CreatedAt time.Time `json:"created_at"`
 	UpdatedAt time.Time `json:"uodated_at"`
 }
 
-func (c *category) isValid() error {
+func (c *Category) isValid() error {
 	if len(c.Name) < 5 {
 		return fmt.Errorf("Name must be greater than 5. Got %d", len(c.Name))
 	}
 	return nil
 }
 
-func NewCategory(name string) (*category, error) {
-	category := &category{
+func NewCategory(name string) (*Category, error) {
+	category := &Category{
 		Name:      name,
 		CreatedAt: time.Now(),
 		UpdatedAt: time.Now(),

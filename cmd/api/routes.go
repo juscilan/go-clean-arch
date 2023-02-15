@@ -3,11 +3,16 @@ package main
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/juscilan/go-clean-arch/cmd/api/controllers"
+	"github.com/juscilan/go-clean-arch/internal/repositories"
 )
 
 func CategoryRoutes(router *gin.Engine) {
 	categoryRoutes := router.Group("/categories")
-	{
-		categoryRoutes.POST("/", controllers.CreateCategoryController)
-	}
+
+	inMemoryCategoryRepository := repositories.NewCategoryInMemoryRepository()
+
+	categoryRoutes.POST("/", func(ctx *gin.Context) {
+		controllers.CreateCategoryController(ctx, inMemoryCategoryRepository)
+	})
+
 }

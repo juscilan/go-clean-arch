@@ -2,7 +2,7 @@ POST http://localhost:8080/categories
 Content-Type: application/json
 
 {
-    "name": "Categoty"
+    "name": "Categoria um"
 }
 
 ###
