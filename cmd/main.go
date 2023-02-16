@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/juscilan/go-clean-arch/cmd/api/routes"
+	"github.com/juscilan/go-clean-arch/adapter/api/routes"
 )
 
 func main() {
