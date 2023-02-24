@@ -18,6 +18,7 @@ func TestItShouldCreateNewCategory(t *testing.T) {
 	category, _ := entities.NewCategory("Testing Category")
 	coming := category.Name
 	expected := "Testing Category"
+
 	if coming != expected {
 		t.Errorf("category name is diferent, expected %s, Got %s.", expected, coming)
 	}

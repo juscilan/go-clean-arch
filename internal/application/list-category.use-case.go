@@ -18,5 +18,6 @@ func (u *listCategoryUseCase) Execute() ([]*entities.Category, error) {
 	if err != nil {
 		return nil, err
 	}
+
 	return categories, nil
 }

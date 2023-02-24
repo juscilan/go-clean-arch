@@ -19,9 +19,11 @@ func NewProduct(name string, price int64) (*Product, error) {
 		Name:  name,
 		Price: price,
 	}
+
 	err := product.isValid()
 	if err != nil {
 		return nil, err
 	}
+
 	return product, nil
 }

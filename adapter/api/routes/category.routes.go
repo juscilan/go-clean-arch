@@ -7,7 +7,6 @@ import (
 )
 
 func CategoryRoutes(router *gin.Engine) {
-
 	inMemoryCategoryRepository := inmemorydb.NewCategoryInMemoryRepository()
 
 	rg := router.Group("/categories")
@@ -19,5 +18,4 @@ func CategoryRoutes(router *gin.Engine) {
 	rg.GET("/", func(ctx *gin.Context) {
 		controllers.ListCategoryController(ctx, inMemoryCategoryRepository)
 	})
-
 }
