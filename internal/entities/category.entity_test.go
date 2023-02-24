@@ -23,6 +23,6 @@ func TestItShouldCreateNewCategory(t *testing.T) {
 	expected := "Testing Category"
 
 	if coming != expected {
-		t.Errorf("category name is diferent, expected %s, Got %s", expected, coming)
+		t.Errorf("category name is diferent, expected %s, Got %s.", expected, coming)
 	}
 }

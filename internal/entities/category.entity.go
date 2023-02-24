@@ -12,8 +12,10 @@ type Category struct {
 	UpdatedAt time.Time `json:"uodated_at"`
 }
 
+const CATEGORY_MIN_LENGTH = 5
+
 func (c *Category) isValid() error {
-	if len(c.Name) < 5 {
+	if len(c.Name) < CATEGORY_MIN_LENGTH {
 		return fmt.Errorf("name must be greater than 5. got %d", len(c.Name))
 	}
 	return nil
