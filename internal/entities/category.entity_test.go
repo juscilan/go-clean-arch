@@ -1,11 +1,13 @@
-package entities
+package entities_test
 
 import (
 	"testing"
+
+	"github.com/juscilan/go-clean-arch/internal/entities"
 )
 
 func TestItShouldReturnAnErrorNewCategory(t *testing.T) {
-	category, err := NewCategory("Test")
+	category, err := entities.NewCategory("Test")
 
 	if category != nil {
 		t.Errorf("it should not create a category, something is wrong.")
@@ -17,7 +19,7 @@ func TestItShouldReturnAnErrorNewCategory(t *testing.T) {
 }
 
 func TestItShouldCreateNewCategory(t *testing.T) {
-	category, _ := NewCategory("Testing Category")
+	category, _ := entities.NewCategory("Testing Category")
 
 	coming := category.Name
 	expected := "Testing Category"

@@ -1,11 +1,15 @@
-package entities
+package entities_test
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/juscilan/go-clean-arch/internal/entities"
+)
 
 const PRICE_ZERO = 0
 
 func TestItShouldNotCreateANewProductPriceZero(t *testing.T) {
-	_, err := NewProduct("Product Number One", PRICE_ZERO)
+	_, err := entities.NewProduct("Product Number One", PRICE_ZERO)
 
 	if err == nil {
 		t.Errorf("it should be an error")
@@ -13,7 +17,7 @@ func TestItShouldNotCreateANewProductPriceZero(t *testing.T) {
 }
 
 func TestProductCreateSucessfully(t *testing.T) {
-	product, _ := NewProduct("Product Number One", 10000)
+	product, _ := entities.NewProduct("Product Number One", 10000)
 
 	coming := product.Name
 	expected := "Product Number One"
