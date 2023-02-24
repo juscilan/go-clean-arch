@@ -9,7 +9,7 @@ type Product struct {
 
 func (p *Product) isValid() error {
 	if p.Price <= 0 {
-		return fmt.Errorf("price must not be less or equal than zero")
+		return fmt.Errorf("the price must be greater than zero")
 	}
 	return nil
 }
@@ -19,7 +19,6 @@ func NewProduct(name string, price int64) (*Product, error) {
 		Name:  name,
 		Price: price,
 	}
-
 	err := product.isValid()
 	if err != nil {
 		return nil, err

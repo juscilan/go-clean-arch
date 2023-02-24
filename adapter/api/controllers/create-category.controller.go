@@ -4,8 +4,8 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	aplication "github.com/juscilan/go-clean-arch/internal/application"
 	"github.com/juscilan/go-clean-arch/internal/repositories/interfaces"
-	usecases "github.com/juscilan/go-clean-arch/internal/use-cases"
 )
 
 type createCategotyInputDTO struct {
@@ -24,7 +24,7 @@ func CreateCategoryController(ctx *gin.Context, repository interfaces.CategoryRe
 		return
 	}
 
-	useCase := usecases.NewCreateCategoryUseCase(repository)
+	useCase := aplication.NewCreateCategoryUseCase(repository)
 
 	err = useCase.Execute(body.Name)
 	if err != nil {

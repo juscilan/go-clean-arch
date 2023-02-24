@@ -1,4 +1,4 @@
-package usecases
+package aplication
 
 import (
 	"github.com/juscilan/go-clean-arch/internal/entities"
