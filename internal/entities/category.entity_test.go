@@ -7,8 +7,8 @@ import (
 )
 
 func TestItShouldReturnAnErrorNewCategory(t *testing.T) {
-	_, coming := entities.NewCategory("Test")
-	if coming == nil {
+	_, output := entities.NewCategory("Test")
+	if output == nil {
 		t.Errorf("it should not create a category, something is wrong.")
 	}
 
@@ -16,10 +16,10 @@ func TestItShouldReturnAnErrorNewCategory(t *testing.T) {
 
 func TestItShouldCreateNewCategory(t *testing.T) {
 	category, _ := entities.NewCategory("Testing Category")
-	coming := category.Name
+	output := category.Name
 	expected := "Testing Category"
 
-	if coming != expected {
-		t.Errorf("category name is diferent, expected %s, Got %s.", expected, coming)
+	if output != expected {
+		t.Errorf("category name is diferent, expected %s, Got %s.", expected, output)
 	}
 }

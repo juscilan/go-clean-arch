@@ -19,10 +19,10 @@ func TestItShouldNotCreateANewProductPriceZero(t *testing.T) {
 func TestProductCreateSucessfully(t *testing.T) {
 	product, _ := entities.NewProduct("Product Number One", 10000)
 
-	coming := product.Name
+	output := product.Name
 	expected := "Product Number One"
 
-	if coming != expected {
+	if output != expected {
 		t.Errorf("it should create a new product")
 	}
 }
