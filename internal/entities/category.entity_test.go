@@ -7,8 +7,8 @@ import (
 )
 
 func TestItShouldReturnAnErrorNewCategory(t *testing.T) {
-	_, output := entities.NewCategory("Test")
-	if output == nil {
+	_, err := entities.NewCategory("Test")
+	if err == nil {
 		t.Errorf("it should not create a category, something is wrong.")
 	}
 
