@@ -7,7 +7,11 @@ import (
 func TestItShouldReturnAnErrorNewCategory(t *testing.T) {
 	category, err := NewCategory("Test")
 
-	if category == nil {
+	if category != nil {
+		t.Errorf("it should not create a category, something is wrong.")
+	}
+
+	if err != nil {
 		t.Log(err.Error())
 	}
 }
